@@ -7,7 +7,7 @@ exports.findAllTVShows = function(req, res) {
 	TVShow.find(function(err, tvshows) {
     if(err) res.send(500, err.message);
 
-    console.log('GET /tvshows')
+    console.log('GET /tvshows');
 		res.status(200).jsonp(tvshows);
 	});
 };
@@ -67,6 +67,6 @@ exports.deleteTVShow = function(req, res) {
 		tvshow.remove(function(err) {
 			if(err) return res.send(500, err.message);
       res.status(200);
-		})
+		});
 	});
 };
